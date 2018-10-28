@@ -51,3 +51,11 @@
     margin: 8px;
     cursor: pointer;
 }
+
+.button_trade:hover {
+    background-color: red
+}
+
+.textArea{
+    width: 20%;
+}

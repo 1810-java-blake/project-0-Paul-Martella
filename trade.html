@@ -44,20 +44,29 @@
 
     <!-- trading ui -->
     <div class="center">
+        <h2>Trading Center</h2>
         
         <button class="button_trade">Currencies</button>
-        <textarea></textarea>
+
+        <textarea class="textArea" id="currencies"></textarea>
+
+        <textarea class="textArea" id="positions"></textarea>
+
+        <button class="button_trade">Your Positions</button>
+            
+    </div> 
+    <div class="center">
+
+        <select>
+                <option value="BTC">Bitcoin</option>
+                <option value="ETH">Ethereum</option>
+                <option value="GUSD">Gemini Dollar</option>
+            </select>
+
         <button class="button_trade">Buy</button>
 
         <button class="button_trade">Sell</button>
-
-        <select>
-            <option value="BTC">Bitcoin</option>
-            <option value="ETH">Ethereum</option>
-            <option value="GUSD">Gemini Dollar</option>
-        </select>
-
-        <button class="button_trade"></button>
-    </div>          
+    </div>
+             
 </body>
 </html>

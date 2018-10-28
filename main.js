@@ -24,8 +24,15 @@
 // get all avaliable symbols for trading 
     // GET https://api.gemini.com/v1/symbols
 
+    function signup() {
+
+    }
+
+    function login() {
+        
+    }
+
     function tradingAlert() {
         
     }
 
-    
