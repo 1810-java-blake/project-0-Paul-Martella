@@ -15,8 +15,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid bg-danger">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid bg-success">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
           <a class="navbar-brand" href="index.html">Project 0</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
               <span class="navbar-toggler-icon"></span>
@@ -38,10 +38,18 @@
            </ul>
           </div>
         </nav>
-    </div>  
+    </div>
     <div>
-        <!-- trading ui -->
-        
-    </div>          
+        <!-- signup form -->
+    <section class="form-wrap">
+        <form id="signupForm">
+            <input type="email" id="signupEmail" class="form_field" name="email" placeholder="Email" required autofocus>
+            <div></div>
+            <input type="password" id="signupPass" class="form_field" name="password" placeholder="Password" pattern=".*" required>
+            <div></div>
+            <input type="submit" class="button_login" value="submit">
+        </form>
+        </section>
+    </div>            
 </body>
 </html>
