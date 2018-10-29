@@ -1,11 +1,21 @@
 $(document).ready(function() {
-    function signup() {
+    $('#loginButton').click(function () {
+        let userName = localStorage.userName;
+        let password = localStorage.password;
+        let loginEmail = document.getElementById('loginEmail').value;
+        let loginPass =  document.getElementById('loginPass').value;
+        if (userName == loginEmail && password == loginPass) {
+            window.location.href = 'trade.html';
+        } else {
+            alert('Login attempt failed, you shall not pass!');
+        }
+    });
 
-    }
-
-    function login() {
-        alert("cliclked");
-    }
+    $('#signupButton').click(function () {
+        localStorage.userName = document.getElementById('signupEmail').value;
+        localStorage.password = document.getElementById('signupPass').value;
+        window.location.href = 'login.html';
+    });
     
     
     $("#symbols").click(function() {
