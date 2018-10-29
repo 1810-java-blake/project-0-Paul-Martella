@@ -13,7 +13,7 @@ $(document).ready(function() {
 
     $('#signupButton').click(function () {
         localStorage.userName = document.getElementById('signupEmail').value;
-        localStorage.password = document.getElementById('signupPass').value;
+        localStorage.password = document.getElementById('signupPass').value
         window.location.href = 'login.html';
     });
     
