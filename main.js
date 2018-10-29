@@ -1,20 +1,26 @@
 $(document).ready(function() {
+    console.log(localStorage.userName);
+        console.log(localStorage.password);
     $('#loginButton').click(function () {
         let userName = localStorage.userName;
         let password = localStorage.password;
-        let loginEmail = document.getElementById('loginEmail').value;
-        let loginPass =  document.getElementById('loginPass').value;
+        let loginEmail = $('#loginEmail').val();
+        let loginPass =  $('#loginPass').val();
         if (userName == loginEmail && password == loginPass) {
-            window.location.href = 'trade.html';
+            window.location = 'trade.html';
         } else {
             alert('Login attempt failed, you shall not pass!');
         }
+        return false;
     });
 
     $('#signupButton').click(function () {
-        localStorage.userName = document.getElementById('signupEmail').value;
-        localStorage.password = document.getElementById('signupPass').value
-        window.location.href = 'login.html';
+        localStorage.userName = $('#signupEmail').val();
+        localStorage.password = $('#signupPass').val();
+        console.log(localStorage.userName);
+        console.log(localStorage.password);
+        window.location = 'login.html';
+        return false;
     });
     
     
