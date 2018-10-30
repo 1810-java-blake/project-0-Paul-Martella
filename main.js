@@ -52,20 +52,20 @@ $(document).ready(function() {
     }
     
     $("#runTest").click(function() {
+        let priceChange;
         console.log("test fired");
-        console.log(sessionStorage.time);
-        console.log(lateststock);
         $.ajax({
             url: 'https://api.iextrading.com/1.0/stock/' + lateststock + '/stats',
             dataType: 'JSON',
             method: 'GET',
             crossDomain: true,
             success: function (res) {
-                let priceChange = res+"."+sessionStorage.time; 
-                priceChange = Math.ceil(priceChange) * 100;
-                document.getElementById('output').value= "Change over time: %" + priceChange;
-                console.log(res.changePercent);
-                console.log(res);
+                console.log(res.ytdChangePercent);
+                if (sessionStorage.time == "ytdChangePercent" )
+                priceChange = res.ytdChangePercent;
+                console.log("price change is: " + priceChange);
+                priceCalc = Math.round(priceChange) * 100;
+                document.getElementById('output').value= "Change over time: %" + priceCalc;
             },
             error: function() {
                 console.log("you done goofed");
