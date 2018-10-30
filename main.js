@@ -1,3 +1,6 @@
+let lateststock;
+let lateprice;
+
 $(document).ready(function() {
     console.log(localStorage.userName);
         console.log(localStorage.password);
@@ -35,10 +38,9 @@ $(document).ready(function() {
 
             },
             success: function (res) {
-                console.log(res);
-                console.log(res.latestPrice);
-                console.log(res.companyName);
-                document.getElementById('output').value= res.companyName + " " + res.latestPrice;
+                lateststock = res.companyName;
+                lateprice = res.latestPrice;
+                document.getElementById('output').value= res.companyName + "\n" + res.sector + "\n" + res.latestPrice;
             },
             error: function() {
                 console.log("you done goofed");
@@ -49,12 +51,9 @@ $(document).ready(function() {
     });
 
     
-    function buy() {
+    function test() {
 
     }
 
-    function sell() {
-
-    }
 
 });

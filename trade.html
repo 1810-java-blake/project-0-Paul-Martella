@@ -50,17 +50,33 @@
 
         <input type="text" class="textArea" id="stock">
 
-        <textarea class="textArea" id="output"></textarea>
-            
     </div> 
+
+    <div class="center">
+        <textarea class="textArea" id="output" rows="4" cols="50"></textarea>
+    </div> 
+
+    
     <h3 class="center" id="usd">$100,000</h3>
     <div class="center">
 
+      <label>Choose Backtest Parameters</label>
+      <select>
+        <option value="ytd">ytd</option>
+        <option value="5y">5 years</option>
+        <option value="2y">2 years</option>
+        <option value="1y">1 year</option>
+        <option value="6m">6 months</option>
+        <option value="3m">3 months</option>
+        <option value="1m">1 month</option>
+        <option value="1d">1 day</option>
+      </select>
+
       <input type="text" class="textArea" id="shares">
 
-        <button class="button_trade">Buy</button>
+        <button class="button_trade">Add</button>
 
-        <button class="button_trade">Sell</button>
+        <button class="button_trade">Run Backtest</button>
     </div>      
 </body>
 </html>
