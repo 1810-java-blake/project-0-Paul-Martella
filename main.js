@@ -87,7 +87,7 @@ $(document).ready(function() {
                     console.log("price cahnge is: " + priceChange);
                 }
                 
-                priceCalc = Math.round(priceChange) * 100;
+                priceCalc = Math.round(priceChange * 100);
                 document.getElementById('output').value= "Change over time: %" + priceCalc;
             },
             error: function() {
