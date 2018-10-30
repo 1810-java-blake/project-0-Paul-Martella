@@ -61,7 +61,7 @@
     <div class="center">
 
       <label>Choose Backtest Parameters</label>
-      <select>
+      <select onchange=""> 
         <option value="ytd">ytd</option>
         <option value="5y">5 years</option>
         <option value="2y">2 years</option>
@@ -77,6 +77,28 @@
         <button class="button_trade">Add</button>
 
         <button class="button_trade">Run Backtest</button>
-    </div>      
+    </div> 
+    <script>
+      let time = 'ytd';
+      function setTime(setTime) {
+        if (setTime == 'ytd') {
+          time = 'ytd';
+        } else if (setTime == '5y') {
+          time = '5y';
+        } else if (setTime == '2y') {
+          time = '2y';
+        } else if (setTime == '1y') {
+          time = '1y';
+        } else if (setTime == '6m') {
+          time ="6m";
+        } else if (setTime == '3m') {
+          time = '3m';
+        } else if (setTime == '1m') {
+          time = '1m';
+        } else {
+          time ='1d';
+        }
+      }
+    </script>     
 </body>
 </html>
