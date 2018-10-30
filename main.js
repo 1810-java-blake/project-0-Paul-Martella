@@ -46,6 +46,7 @@ $(document).ready(function() {
 
     $("#setCash").click (function() {
         document.getElementById("usd").innerHTML = "$" + $('#cash').val();
+        cash = $('#cash').val();
     });
     
     $("#runTest").click(function() {

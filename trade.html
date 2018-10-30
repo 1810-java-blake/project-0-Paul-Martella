@@ -48,19 +48,19 @@
         
         <button type="submit" class="button_trade" id="symbols">Check Price</button>
 
-        <input type="text" class="textArea" id="stock">
+        <input type="text" class="textArea" id="stock" placeholder="Ticker Symbol">
 
     </div> 
 
     <div class="center">
-        <textarea class="textArea" id="output" rows="4" cols="50"></textarea>
+        <textarea class="textArea" id="output" rows="4" cols="50" placeholder="API respones will appear here"></textarea>
     </div> 
 
     
     <h3 class="center" id="usd">$100000</h3>
     <div class="center">
 
-      <label>Choose Backtest Parameters</label>
+      <label>Choose Backtest Parameters:</label>
       <select onchange="setTime(this.value)"> 
         <option value="ytd">ytd</option>
         <option value="5y">5 years</option>
@@ -72,7 +72,7 @@
         <option value="5d">5 days</option>
       </select>
 
-      <input type="number" class="textArea" id="cash">
+      <input type="number" class="textArea" id="cash" placeholder="Enter initial funds">
 
         <button class="button_trade" id="setCash">Set</button>
 
