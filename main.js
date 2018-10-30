@@ -28,32 +28,50 @@ $(document).ready(function() {
     
     
     $("#symbols").click(function() {
+        console.log("request fired");
         let stock = document.getElementById('stock').value;
         $.ajax({
             url: 'https://api.iextrading.com/1.0/stock/' + stock + '/quote',
             dataType: 'JSON',
             method: 'GET',
             crossDomain: true,
-            data: {
-
-            },
             success: function (res) {
-                lateststock = res.companyName;
+                lateststock = stock;
                 lateprice = res.latestPrice;
-                document.getElementById('output').value= res.companyName + "\n" + res.sector + "\n" + res.latestPrice;
+                document.getElementById('output').value= "Company name: " + res.companyName + "\n" + "Sector: " + res.sector + "\n" + "Price: $" + res.latestPrice;
             },
             error: function() {
                 console.log("you done goofed");
-                console.log(stock);
             }
             
         });
     });
 
-    
-    function test() {
+    function setCash() {
 
     }
+    
+    $("#runTest").click(function() {
+        console.log("test fired");
+        console.log(sessionStorage.time);
+        console.log(lateststock);
+        $.ajax({
+            url: 'https://api.iextrading.com/1.0/stock/' + lateststock + '/stats',
+            dataType: 'JSON',
+            method: 'GET',
+            crossDomain: true,
+            success: function (res) {
+                let priceChange = res+"."+sessionStorage.time; 
+                priceChange = Math.ceil(priceChange) * 100;
+                document.getElementById('output').value= "Change over time: %" + priceChange;
+                console.log(res.changePercent);
+                console.log(res);
+            },
+            error: function() {
+                console.log("you done goofed");
+            }
+        });
+    });
 
 
 });

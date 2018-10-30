@@ -61,7 +61,7 @@
     <div class="center">
 
       <label>Choose Backtest Parameters</label>
-      <select onchange=""> 
+      <select onchange="setTime(this.value)"> 
         <option value="ytd">ytd</option>
         <option value="5y">5 years</option>
         <option value="2y">2 years</option>
@@ -69,34 +69,34 @@
         <option value="6m">6 months</option>
         <option value="3m">3 months</option>
         <option value="1m">1 month</option>
-        <option value="1d">1 day</option>
+        <option value="5d">5 days</option>
       </select>
 
-      <input type="text" class="textArea" id="shares">
+      <input type="text" class="textArea" id="cash">
 
-        <button class="button_trade">Add</button>
+        <button class="button_trade" id="setCash">Set</button>
 
-        <button class="button_trade">Run Backtest</button>
+        <button class="button_trade" id="runTest">Run Backtest</button>
     </div> 
     <script>
-      let time = 'ytd';
+      sessionStorage.time = 'ytdChangePercent';
       function setTime(setTime) {
         if (setTime == 'ytd') {
-          time = 'ytd';
+          sessionStorage.time = 'ytdChangePercent';
         } else if (setTime == '5y') {
-          time = '5y';
+          sessionStorage.time = 'year5ChangePercent';
         } else if (setTime == '2y') {
-          time = '2y';
+          sessionStorage.time = 'year2ChangePercent';
         } else if (setTime == '1y') {
-          time = '1y';
+          sessionStorage.time = 'year1ChangePercent';
         } else if (setTime == '6m') {
-          time ="6m";
+          sessionStorage. time ="month6ChangePercent";
         } else if (setTime == '3m') {
-          time = '3m';
+          sessionStorage.time = 'month3ChangePercent';
         } else if (setTime == '1m') {
-          time = '1m';
+          sessionStorage.time = 'month1ChangePercent';
         } else {
-          time ='1d';
+          sessionStorage.time ='day5ChangePercent';
         }
       }
     </script>     
