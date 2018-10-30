@@ -1,9 +1,6 @@
-let lateststock;
-let lateprice;
+let cash = 100000;
 
 $(document).ready(function() {
-    console.log(localStorage.userName);
-        console.log(localStorage.password);
     $('#loginButton').click(function () {
         let userName = localStorage.userName;
         let password = localStorage.password;
@@ -47,9 +44,9 @@ $(document).ready(function() {
         });
     });
 
-    function setCash() {
-
-    }
+    $("#setCash").click (function() {
+        document.getElementById("usd").innerHTML = "$" + $('#cash').val();
+    });
     
     $("#runTest").click(function() {
         let priceChange;
@@ -89,6 +86,9 @@ $(document).ready(function() {
                 
                 priceCalc = Math.round(priceChange * 100);
                 document.getElementById('output').value= "Change over time: %" + priceCalc;
+                let newCash = cash * priceCalc
+                document.getElementById("usd").innerHTML = newCash;
+                
             },
             error: function() {
                 console.log("you done goofed");
